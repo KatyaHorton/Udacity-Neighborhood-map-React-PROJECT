@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
+import { Map } from 'google-maps-react'
 
 class MapContainer extends Component {
-
   render() {
     return (
       <div id='map-container'>
        
-   	  <Map google={this.props.google} zoom={14}>
- 
-        <Marker onClick={this.onMarkerClick}
-                name={'Current location'} />
- 
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            
-        </InfoWindow>
-      </Map>		
+   	  	<Map google={this.props.google} 
+			 zoom={11}
+			 initialCenter={{
+				lat: 51.4826,
+				lng: 0
+		}}
+		
+		styles = {styles}
+
+			 >
+		</Map>		
 		
       </div>
 		
@@ -25,6 +26,5 @@ class MapContainer extends Component {
 }
 
 
-export default GoogleApiWrapper({
-  apiKey: ('AIzaSyC-qQFJpin2n9dhMsENQ0n6P34eZkix0h8')
-})(MapContainer)
+export default MapContainer
+

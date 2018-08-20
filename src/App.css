@@ -11,6 +11,11 @@
 	right: 0px;
       }
 
+#map {
+	height: 100%;
+	width: 100%;
+}
+
 #list-container {
 	background: #fff;
 	border: 1px solid #999;
