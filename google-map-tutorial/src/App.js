@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Map from './components/Map.js'
+
+
 class App extends Component {
   render() {
     return (
@@ -10,7 +12,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Map/>
+        <Map />
+		<ListPlaces />
+		<>
       </div>
     );
   }
