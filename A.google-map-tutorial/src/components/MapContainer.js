@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
-
-//dear Eman, I am slightly lost in that component, I see that you are using only const in your CompositeGoogleMap.js file. 
-//It works like that but I feel smth is not right 
-// if you could suggest smth, I will be very grateful
-//feels like smth dublicates itself
-//thank you very much
-
-class CreateGoogleMap extends Component {
+class MapContainer extends Component  {
 	
    render() {
 	   
@@ -17,7 +10,7 @@ class CreateGoogleMap extends Component {
 	   <GoogleMap
         defaultCenter = { this.props.defaultCenter }
         defaultZoom = { this.props.defaultZoom }
-      >
+      >   
       </GoogleMap>
    ));
 	   
@@ -32,4 +25,4 @@ class CreateGoogleMap extends Component {
    );
    }
 }; 
-export default CreateGoogleMap;
+export default MapContainer;

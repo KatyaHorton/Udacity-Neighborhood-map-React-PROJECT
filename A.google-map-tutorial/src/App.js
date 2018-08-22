@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
-import Map from './components/Map.js'
+import MapContainer from './components/MapContainer.js'
 import * as FoursquareDataAPI from './components/FoursquareDataAPI.js'
 
 
@@ -40,9 +40,10 @@ class App extends Component {
           <h1 className="App-title">Restaurants in Greenwich</h1>
         </header>
         
-		<Map
+		<MapContainer
 		 defaultCenter = {this.state.defaultCenter }
 		 defaultZoom = { this.state.defaultZoom }
+	
 		/>
 		
 		
