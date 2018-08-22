@@ -10,8 +10,8 @@ class App extends Component {
 	
 	state = {
 		locations: [],
-		defaultCenter: { lat: 51.5, lng: 0 }, 
-        defaultZoom: 13 
+		defaultCenter: { lat: 51.48, lng: -0.001 }, 
+        defaultZoom: 14
 	}
 	
   componentDidMount() {
@@ -52,7 +52,9 @@ class App extends Component {
 		
 		/>
 		
-		<SearchContainer />
+		<SearchContainer 
+			locations = { this.state.locations }
+		/>
       </div>
     );
   }
