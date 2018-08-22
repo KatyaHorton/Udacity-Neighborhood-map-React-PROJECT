@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //imports ‘withGoogleMap’ (a Higher Order Component)
 //‘GoogleMap’ (which is going to take in map props)
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import MarkersContainer from './MarkersContainer'
 
 class MapContainer extends Component  {
 
@@ -15,7 +16,11 @@ class MapContainer extends Component  {
         defaultZoom = { this.props.defaultZoom }
 	    locations= {this.props.locations}
       >   
+	   <MarkersContainer 
+	    
+	    locations= {this.props.locations}
 	   
+	   />
 	   </GoogleMap>
 	  
    ));
