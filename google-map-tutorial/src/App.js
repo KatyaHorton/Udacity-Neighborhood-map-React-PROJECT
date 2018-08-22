@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import Map from './components/Map.js'
 
@@ -10,11 +10,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Restaurants in Greenwich</h1>
         </header>
         <Map />
-		<ListPlaces />
-		<>
+		
+		
       </div>
     );
   }
