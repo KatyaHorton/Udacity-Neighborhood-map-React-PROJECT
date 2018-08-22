@@ -7,12 +7,12 @@ import * as FoursquareDataAPI from './components/FoursquareDataAPI.js'
 
 class App extends Component {
 	
-	
 	state = {
-		locations: []
+		locations: [],
+		defaultCenter: { lat: 51.5, lng: 0 }, 
+        defaultZoom: 13 
 	}
 	
-
   componentDidMount() {
 //after component mounts check for errors
 		function handleErrors(response) {
@@ -26,19 +26,24 @@ class App extends Component {
 			 .then((locations) => {
 			 this.setState({locations})
 		 }).catch((error) => {
-			 alert('Sorry! Error occured whils loading data from FourSquare API. Locations data will not be displayed ')
+			 alert('Sorry! Error occurred whilst loading data from FourSquare API. Locations data will not be displayed ')
 		 })
 	}
 	
   render() {
 	  console.log('Locations:', this.state.locations);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div id="main">
+		
+		<header id="header">
+          <img src={logo} id="header-logo" alt="header-logo" />
           <h1 className="App-title">Restaurants in Greenwich</h1>
         </header>
-        <Map />
+        
+		<Map
+		 defaultCenter = {this.state.defaultCenter }
+		 defaultZoom = { this.state.defaultZoom }
+		/>
 		
 		
       </div>
