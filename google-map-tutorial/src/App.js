@@ -31,7 +31,7 @@ class App extends Component {
 	}
 	
   render() {
-	  console.log('Locations:', this.state.defaultCenter );
+	  console.log('Locations:', this.state.locations );
     return (
       <div id="main">
 		
