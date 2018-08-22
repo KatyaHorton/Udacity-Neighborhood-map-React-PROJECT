@@ -56,6 +56,19 @@
 	background-color: bisque;
 	border: 1px solid black;
 }
+
+#search-results-list li{
+	list-style-type: none;
+	padding: 0.3em;
+	text-align: left;
+	border: 1px solid #3f281f;
+	
+	
+}
+
+.search-items-address {
+	font-size: 0.8em;	
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

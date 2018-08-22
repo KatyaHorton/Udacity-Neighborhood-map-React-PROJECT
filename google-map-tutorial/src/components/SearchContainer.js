@@ -11,17 +11,20 @@ class SearchContainer extends Component {
 					type="text" 
 					placeholder="What exactly do you fancy?"/>
 				<div id='search-results'>
-					<ol>
-			
-			
-			{this.props.locations.map(location => (
-		
-		<li>{location.name}</li>
+					<ol id='search-results-list'>
+						{this.props.locations.map(location => (
+							<li key={location.id}
+								onClick={(event) => this.props.handleChildClickEvent(event, location.location)}
+						
+							>
+							{location.name}<br/>
+							<span className='search-items-address'>
+								{location.location.formattedAddress}
+							</span>
+							</li>
 		)
-		
 		)}
-			
-			
+	
 					</ol>
 				</div>
 			</div>
