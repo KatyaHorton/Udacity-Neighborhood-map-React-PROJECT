@@ -14,7 +14,7 @@ class SearchContainer extends Component {
 					<ol id='search-results-list'>
 						{this.props.locations.map(location => (
 							<li key={location.id}
-								onClick={(event) => this.props.handleChildClickEvent(event, location.location)}
+								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}
 						
 							>
 							{location.name}<br/>

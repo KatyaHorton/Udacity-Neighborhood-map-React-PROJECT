@@ -36,8 +36,13 @@ class App extends Component {
 /* ------------------------- FUNCTIONS TO HANDLE EVENTS ------------------------- */
 
 //function for the items in the list or marker in the map clicked	  
-	  handleChildClickEvent = (smth, location) => {
-		  console.log(location)
+	  handleChildClickEvent = (smth, location, id) => {
+		  console.log(location, id)
+		  this.setState({
+			  defaultCenter: {lat: location.lat, lng: location.lng }
+			 
+		  })
+		  console.log(this.state.defaultCenter)
 	  }
 	  
 	  
