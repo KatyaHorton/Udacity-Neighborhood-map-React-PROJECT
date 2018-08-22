@@ -31,7 +31,7 @@ class App extends Component {
 	}
 	
   render() {
-	  console.log('Locations:', this.state.locations);
+	  console.log('Locations:', this.state.defaultCenter );
     return (
       <div id="main">
 		
@@ -39,11 +39,16 @@ class App extends Component {
           <img src={logo} id="header-logo" alt="header-logo" />
           <h1 className="App-title">Restaurants in Greenwich</h1>
         </header>
-        
+{/* passing props and states to MapContainer */}
 		<MapContainer
-		 defaultCenter = {this.state.defaultCenter }
-		 defaultZoom = { this.state.defaultZoom }
-		 locations= {this.state.locations}
+				locations = { this.state.locations }
+				defaultCenter = { this.state.defaultCenter }
+				defaultZoom = { this.state.defaultZoom }
+		 		googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qQFJpin2n9dhMsENQ0n6P34eZkix0h8&v=3.exp&libraries=geometry,drawing,places`}
+				loadingElement={<div style={{ height: `100%` }} />}
+				containerElement={<div style={{ height: `600px`, width: `600px` }} />}
+				mapElement={<div style={{ height: `100%` }} />}
+		
 		/>
 		
 		

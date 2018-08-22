@@ -1,13 +1,35 @@
 import React, { Component } from 'react';
 //imports ‘withGoogleMap’ (a Higher Order Component)
 //‘GoogleMap’ (which is going to take in map props)
-import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
-import MarkersContainer from './MarkersContainer'
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+//import MarkersContainer from './MarkersContainer'
 
-class MapContainer extends Component  {
+
+const MapContainer = withScriptjs(withGoogleMap((props) =>{
+
+let defaultCenter = props.defaultCenter;
+let defaultZoom = props.defaultZoom;	
+	
+// const markers should go here 
+	
+	return (
+		<GoogleMap
+			defaultZoom={ defaultZoom }
+       		defaultCenter = { defaultCenter }
+		>
+		</GoogleMap>
+		
+	)
+	
+})
+)
+
+/* class MapContainer extends Component  {
 
 
    render() {  
+	   
+	   
 //creating a constant that uses both 'withGoogleMap' and 'GoogleMap'
    const Map = withGoogleMap(props => (
 	   
@@ -20,7 +42,8 @@ class MapContainer extends Component  {
 	    
 	    locations= {this.props.locations}
 	   
-	   />
+	   /> 
+	   
 	   </GoogleMap>
 	  
    ));
@@ -34,6 +57,6 @@ class MapContainer extends Component  {
       </div>
    );
    }
-}; 
+}; */
 
 export default MapContainer;

@@ -5,7 +5,7 @@ class MarkersContainer extends Component  {
  
     getInitialState() {
         return { showInfoWindow: false }
-    },
+    }
 
     render() {
  console.log('hello')
