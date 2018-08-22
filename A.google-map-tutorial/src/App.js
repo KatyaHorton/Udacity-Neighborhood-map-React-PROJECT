@@ -43,7 +43,6 @@ class App extends Component {
 		<MapContainer
 		 defaultCenter = {this.state.defaultCenter }
 		 defaultZoom = { this.state.defaultZoom }
-	
 		/>
 		
 		
