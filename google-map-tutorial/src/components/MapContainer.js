@@ -14,11 +14,10 @@ const markers = props.locations.map( location =>
 									<MarkersContainer
 									location = {{ lat: location.location.lat, lng: location.location.lng }}
 									key={location.id}
+									name = {location.name}
 												  />
 )	
 
-
-	
 	return (
 		<GoogleMap
 			defaultZoom={ defaultZoom }

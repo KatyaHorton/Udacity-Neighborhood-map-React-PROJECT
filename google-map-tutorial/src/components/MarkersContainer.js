@@ -7,6 +7,7 @@ class MarkersContainer extends Component  {
         return (
             <Marker
 				position = {this.props.location}
+				name = {this.props.name }
             >
 			
             </Marker>

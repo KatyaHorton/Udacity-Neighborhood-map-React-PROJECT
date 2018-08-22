@@ -1,17 +1,25 @@
 #main {
   text-align: center;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(40px, auto));
+  grid-template-columns: repeat(3, 1fr);	
+  min-height: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
 }
 
 #header-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 60px;
+ 
 }
 
 #header {
   background-color: #3f281f;
-  height: 150px;
+  height: 110px;
   padding: 20px;
-  color: white;
+  color: white;	
+  grid-column: 1/4;	
 }
 
 .App-title {
@@ -22,10 +30,16 @@
   font-size: large;
 }
 
+#map-container{
+	grid-row: 2/3;
+	grid-column: 2/4;
+}
 
-#map{
-	height: 500px;
-	width:500px;
+#search-container {
+	grid-row: 2/3;
+	grid-column: 1/2;
+	background-color: antiquewhite;
+	text-align: center;
 }
 
 @keyframes App-logo-spin {
