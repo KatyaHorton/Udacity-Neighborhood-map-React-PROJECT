@@ -10,9 +10,9 @@ class MarkersContainer extends Component  {
     render() {
         return (
             <Marker
-				position = {this.props.location}
-				name = {this.props.name }
-		
+				position = { this.props.location }
+				name = { this.props.name }
+				onClick={ this.props.onClick }
 				>			
             </Marker>
         )

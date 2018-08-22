@@ -15,7 +15,7 @@ const markers = props.locations.map( location =>
 										location = {{ lat: location.location.lat, lng: location.location.lng }}
 										key={location.id}
 										name = {location.name}
-										onClick={(event) => this.props.handleChildClickEvent(event, location.location)}
+										onClick={(event) => props.handleChildClickEvent(event, location.location)}
 									/>
 )	
 	return (
