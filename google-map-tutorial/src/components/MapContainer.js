@@ -13,6 +13,7 @@ const markers = props.locations.map( currentLocation =>
 										location = {{ lat: currentLocation.location.lat, lng: currentLocation.location.lng }}
 										key={currentLocation.id}
 										name = {currentLocation.name}
+										address = { currentLocation.location.formattedAddress}
 										onClick={(event) => props.handleChildClickEvent(event, currentLocation.location, currentLocation.id)}
 									/>
 )	

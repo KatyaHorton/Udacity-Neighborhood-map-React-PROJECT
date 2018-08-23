@@ -62,13 +62,30 @@
 	padding: 0.3em;
 	text-align: left;
 	border: 1px solid #3f281f;
-	
-	
 }
 
 .search-items-address {
 	font-size: 0.8em;	
 }
+
+.info-window {
+	 	background: #f7ebcf;
+        border: 1px solid #999;
+        border-radius: 1px;
+        min-height: 60px;
+        line-height: 15px;
+        padding: 10px 10px 10px 10px;
+        text-align: left;
+		width: 130px;
+}
+
+.info-window-name {
+	text-decoration: underline;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

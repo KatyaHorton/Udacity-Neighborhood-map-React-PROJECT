@@ -13,7 +13,15 @@ class MarkersContainer extends Component  {
 				position = { this.props.location }
 				name = { this.props.name }
 				onClick={ this.props.onClick }
-				>			
+				address = { this.props.address }
+				>	
+					<InfoWindow >
+						<div className='info-window'>
+								<span className='info-window-name'>{ this.props.name }
+								</span><br/>
+								{ this.props.address } 
+						</div>
+      				</InfoWindow>
             </Marker>
         )
 
