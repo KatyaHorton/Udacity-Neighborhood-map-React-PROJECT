@@ -13,7 +13,9 @@ class App extends Component {
 		newCenter: { lat: 51.48, lng: -0.001 },
 		zoom: 14,
 		isOpen: false,
-		showInfoIndex: -1
+		showInfoIndex: -1,
+		selectedLocation:{}
+	
 	}
 	
   componentDidMount() {
@@ -39,12 +41,16 @@ class App extends Component {
 
 //function for the items in the list or marker in the map clicked	  
 	  handleChildClickEvent = (smth, location, id) => {
+		  
 		  if(location !== undefined) {
 		  this.setState({
 			  newCenter: {lat: location.lat, lng: location.lng },
 			  zoom: 17, 
-			  isOpen: true
+			  isOpen: true, 
+			  selectedLocation: id
 		  })
+			  console.log('SelectedLocation', this.state.selectedLocation)
+			  
 	  }}
 	  
 	  
@@ -66,6 +72,7 @@ class App extends Component {
         </header>
 {/* passing props and states to MapContainer */}
 		<MapContainer
+				selectedLocation = { this.state.selectedLocation }
 				locations = { this.state.locations }
 				newCenter = { this.state.newCenter }
 				zoom = { this.state.zoom }

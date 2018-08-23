@@ -15,12 +15,11 @@ class MarkersContainer extends Component  {
 				name = { this.props.name }
 				onClick={ this.props.onClick }
 				address = { this.props.address }
+				selectedLocation = { this.props.selectedLocation }
+				
 				>	
-			
-			{console.log(this.props.isOpen)}
-
-//set
-	{ (this.props.isOpen) && (<InfoWindow >
+	
+	{ (this.props.selectedLocation === this.props.checkId ) && (<InfoWindow >
 						<div className='info-window'>
 								<span className='info-window-name'>{ this.props.name }
 								</span><br/>
