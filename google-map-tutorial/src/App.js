@@ -11,8 +11,9 @@ class App extends Component {
 	state = {
 		locations: [],
 		defaultCenter: { lat: 51.48, lng: -0.001 },
-		newCenter: {},
-        defaultZoom: 14
+		newCenter: { lat: 51.48, lng: -0.001 },
+        defaultZoom: 14,
+		zoom: 15
 	}
 	
   componentDidMount() {
@@ -37,16 +38,15 @@ class App extends Component {
 
 //function for the items in the list or marker in the map clicked	  
 	  handleChildClickEvent = (smth, location, id) => {
-		  console.log(location, id)
 		  this.setState({
-			  defaultCenter: {lat: location.lat, lng: location.lng }
-			 
+			  newCenter: {lat: location.lat, lng: location.lng }
 		  })
-		  console.log(this.state.defaultCenter)
 	  }
 	  
 	  
-	
+	  
+	  
+
   render() {
 	  console.log('Locations:', this.state.locations );
     return (
@@ -59,8 +59,8 @@ class App extends Component {
 {/* passing props and states to MapContainer */}
 		<MapContainer
 				locations = { this.state.locations }
-				defaultCenter = { this.state.defaultCenter }
-				defaultZoom = { this.state.defaultZoom }
+				newCenter = { this.state.newCenter }
+				zoom = { this.state.zoom }
 				handleChildClickEvent = { this.handleChildClickEvent }
 		 		googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qQFJpin2n9dhMsENQ0n6P34eZkix0h8&v=3.exp&libraries=geometry,drawing,places`}
 				loadingElement={<div style={{ height: `100%` }} />}

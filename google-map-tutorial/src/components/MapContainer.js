@@ -7,23 +7,23 @@ import MarkersContainer from './MarkersContainer'
 
 const MapContainer = withScriptjs(withGoogleMap((props) =>{
 
-let defaultCenter = props.defaultCenter;
-let defaultZoom = props.defaultZoom;
-	
-const markers = props.locations.map( location => 
+
+const markers = props.locations.map( currentLocation => 
 									<MarkersContainer
-										location = {{ lat: location.location.lat, lng: location.location.lng }}
-										key={location.id}
-										name = {location.name}
-										onClick={(event) => props.handleChildClickEvent(event, location.location, location.id)}
+										location = {{ lat: currentLocation.location.lat, lng: currentLocation.location.lng }}
+										key={currentLocation.id}
+										name = {currentLocation.name}
+										onClick={(event) => props.handleChildClickEvent(event, currentLocation.location, currentLocation.id)}
 									/>
 )	
 	return (
+ 
 		<GoogleMap
-			defaultZoom={ defaultZoom }
-       		defaultCenter = { defaultCenter }
+			zoom ={ props.zoom }
+       		center = { props.newCenter }
 		>
 		{ markers }
+								  {console.log('Mapcontainer return:', props.locations)}
 		</GoogleMap>
 		
 	)
