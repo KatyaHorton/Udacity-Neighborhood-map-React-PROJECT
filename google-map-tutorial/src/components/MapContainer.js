@@ -23,7 +23,7 @@ const markers = props.locations.map( currentLocation =>
        		center = { props.newCenter }
 		>
 		{ markers }
-								  {console.log('Mapcontainer return:', props.locations)}
+
 		</GoogleMap>
 		
 	)

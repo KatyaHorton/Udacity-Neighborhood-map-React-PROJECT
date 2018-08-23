@@ -10,10 +10,9 @@ class App extends Component {
 	
 	state = {
 		locations: [],
-		defaultCenter: { lat: 51.48, lng: -0.001 },
 		newCenter: { lat: 51.48, lng: -0.001 },
-        defaultZoom: 14,
-		zoom: 15
+		zoom: 14,
+		addressShown: false
 	}
 	
   componentDidMount() {
@@ -39,7 +38,8 @@ class App extends Component {
 //function for the items in the list or marker in the map clicked	  
 	  handleChildClickEvent = (smth, location, id) => {
 		  this.setState({
-			  newCenter: {lat: location.lat, lng: location.lng }
+			  newCenter: {lat: location.lat, lng: location.lng },
+			  zoom: 17
 		  })
 	  }
 	  
