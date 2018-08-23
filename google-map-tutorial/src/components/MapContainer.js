@@ -1,6 +1,6 @@
 import React from 'react';
 //imports ‘withGoogleMap’ (a Higher Order Component)
-//‘GoogleMap’ (which is going to take in map props)
+
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import MarkersContainer from './MarkersContainer'
 
@@ -12,7 +12,9 @@ const markers = props.locations.map( currentLocation =>
 									<MarkersContainer
 										location = {{ lat: currentLocation.location.lat, lng: currentLocation.location.lng }}
 										key={currentLocation.id}
+										index={currentLocation.id}
 										name = {currentLocation.name}
+										isOpen = {props.isOpen}
 										address = { currentLocation.location.formattedAddress}
 										onClick={(event) => props.handleChildClickEvent(event, currentLocation.location, currentLocation.id)}
 									/>

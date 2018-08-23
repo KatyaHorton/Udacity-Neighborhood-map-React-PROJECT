@@ -12,17 +12,17 @@ class App extends Component {
 		locations: [],
 		newCenter: { lat: 51.48, lng: -0.001 },
 		zoom: 14,
-		infoShown: false
+		isOpen: false,
+		showInfoIndex: -1
 	}
 	
   componentDidMount() {
-//after component mounts check for errors
-/*		function handleErrors(response) {
+	  function handleErrors(response) {
 			if (response.ok) {
 				throw Error(response.statusText);
 			}
 			return response;	
-		}  */
+		} 
 //update state of locations with the data fetched from Foursquare API		
 		 FoursquareDataAPI.getAllPlaces()
 			 .then((locations) => {
@@ -39,36 +39,20 @@ class App extends Component {
 
 //function for the items in the list or marker in the map clicked	  
 	  handleChildClickEvent = (smth, location, id) => {
+		  if(location !== undefined) {
 		  this.setState({
 			  newCenter: {lat: location.lat, lng: location.lng },
 			  zoom: 17, 
-			  infoShown: true
+			  isOpen: true
 		  })
-	  }
+	  }}
 	  
 	  
-// This function populates the infowindow when the marker is clicked. We'll only allow
-// one infowindow which will open at the marker that is clicked, and populate based
-// on that markers position.
-      populateInfoWindow = (marker, infowindow) => {
+	  
+	  
+	 
+/* ------------------------- VARIABLES  ------------------------- */
 
-// Check to make sure the infowindow is not already opened on this marker.
-        if (infowindow.marker != marker) {
-          infowindow.marker = marker;
-
-//clears the infowindow to give the streetview time to load		  
-          infowindow.setContent('');
-      
-// Make sure the marker property is cleared if the infowindow is closed.
-          infowindow.addListener('closeclick', function(){
-            infowindow.setMarker = null;
-          });
-		  
-        } 
-      };
-		
-	  
-	  
 	  
 
   render() {
@@ -85,8 +69,8 @@ class App extends Component {
 				locations = { this.state.locations }
 				newCenter = { this.state.newCenter }
 				zoom = { this.state.zoom }
-				populateInfoWindow = { this.populateInfoWindow }
 				handleChildClickEvent = { this.handleChildClickEvent }
+				isOpen = { this.state.isOpen }
 		 		googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qQFJpin2n9dhMsENQ0n6P34eZkix0h8&v=3.exp&libraries=geometry,drawing,places`}
 				loadingElement={<div style={{ height: `100%` }} />}
 				containerElement={<div id="map-container" style={{ height: `600px` }} />}

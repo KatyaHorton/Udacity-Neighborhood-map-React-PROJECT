@@ -6,27 +6,31 @@ import { Marker, InfoWindow } from "react-google-maps"
 
 class MarkersContainer extends Component  {
  
-	
+
     render() {
         return (
+
             <Marker
 				position = { this.props.location }
 				name = { this.props.name }
 				onClick={ this.props.onClick }
 				address = { this.props.address }
 				>	
-					<InfoWindow >
+			
+			{console.log(this.props.isOpen)}
+
+//set
+	{ (this.props.isOpen) && (<InfoWindow >
 						<div className='info-window'>
 								<span className='info-window-name'>{ this.props.name }
 								</span><br/>
 								{ this.props.address } 
 						</div>
-      				</InfoWindow>
+      				</InfoWindow> )}
             </Marker>
         )
-
-    }
-
+    } 
+	
 }
 
 export default MarkersContainer
