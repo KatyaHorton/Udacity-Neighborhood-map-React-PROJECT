@@ -67,7 +67,7 @@ class SearchContainer extends Component {
 				<div id='search-results'>
 					<ol id='search-results-list'>
 						
-						{this.props.locations.map(location => (
+						{((!this.props.locationsNotFound) && (this.props.locations.map(location => (
 							<li key={location.id}
 								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}					
 							>
@@ -77,7 +77,10 @@ class SearchContainer extends Component {
 							</span> } 
 			</li>
 		)
-		)}
+		)))
+				} 
+
+					{((this.props.locationsNotFound) && (<div>Search results not found</div>)	)}
 		
 					</ol>
 			

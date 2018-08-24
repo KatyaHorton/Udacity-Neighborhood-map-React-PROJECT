@@ -16,7 +16,9 @@ class App extends Component {
 		zoom: 14,
 		isOpen: false,
 		showInfoIndex: -1,
-		selectedLocation:{}
+		selectedLocation: {},
+		query: ''
+		
 	
 	}
 	
@@ -62,14 +64,18 @@ class App extends Component {
 	  updateLocations = (searchResultArr, query) => {
     if(query && searchResultArr) {
       this.setState((state) => ({
-        locations: searchResultArr,
+          locations: searchResultArr,
 		  zoom: 14, 
-		  newCenter: { lat: 51.48, lng: -0.001 }
+		  newCenter: { lat: 51.48, lng: -0.001 },
+		  locationsNotFound: false
       }))
     } else {
 
 		this.setState({
-			locations: this.state.originalLocations})	
+			locations: this.state.originalLocations,
+			locationsNotFound: true
+		})
+			
     }
   }	  
 	  
@@ -104,6 +110,7 @@ class App extends Component {
 			handleChildClickEvent = { this.handleChildClickEvent }
 			selectedLocation = { this.state.selectedLocation }
 			onUserDidSearch= { this.updateLocations }
+			query = { this.state.query }
 		/>
       </div>
     );
