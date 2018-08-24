@@ -11,6 +11,7 @@ class App extends Component {
 	state = {
 		locations: [],
 		searchedLocations: [],
+		locationsNotFound: false,
 		newCenter: { lat: 51.48, lng: -0.001 },
 		zoom: 14,
 		isOpen: false,
@@ -29,7 +30,9 @@ class App extends Component {
 //update state of locations with the data fetched from Foursquare API		
 		 FoursquareDataAPI.getAllPlaces().then(handleErrors)
 			 .then((locations) => {
-			 this.setState({locations})
+			 this.setState({locations: locations,
+							originalLocations: locations
+						   })
 		 }).catch((error) => {
 			 alert('Sorry! Error occurred whilst loading data from FourSquare API. Locations data will not be displayed ')
 		 })
@@ -57,12 +60,14 @@ class App extends Component {
 	  
 //updates locations depending on the search 
 	  updateLocations = (searchResultArr, query) => {
-    if(query) {
+    if(query && searchResultArr) {
       this.setState((state) => ({
         locations: searchResultArr
       }))
-    }else {
-      this.setState({locations: this.state.locations})
+    } else {
+
+		this.setState({
+			locations: this.state.originalLocations})	
     }
   }	  
 	  
@@ -94,6 +99,7 @@ class App extends Component {
 		
 		<SearchContainer 
 			locations = { this.state.locations }
+			locationsNotFound = { this.state.locationsNotFound }
 			handleChildClickEvent = { this.handleChildClickEvent }
 			selectedLocation = { this.state.selectedLocation }
 			onUserDidSearch= { this.updateLocations }

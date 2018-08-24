@@ -66,6 +66,7 @@ class SearchContainer extends Component {
 			/>
 				<div id='search-results'>
 					<ol id='search-results-list'>
+						
 						{this.props.locations.map(location => (
 							<li key={location.id}
 								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}					
@@ -79,6 +80,8 @@ class SearchContainer extends Component {
 		)}
 		
 					</ol>
+			
+					
 				</div>
 			</div>
 		)
