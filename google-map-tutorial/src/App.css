@@ -49,25 +49,34 @@
 }
 
 #search-input{
-	width: 90%;
+	width: 95%;
 	height: 30px;
-	padding-left: 1em;
 	font-size: 1em;
 }
 
 #search-results{
-	width: 100%;
+	width: 99%;
 	height: 90%;	
 }
 
-#search-results-list li{
+ol {
 	list-style-type: none;
-	padding: 0.3em;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#search-results-list li{
+	
+	padding: 0.2em;
 	text-align: left;
+	width: 90%;
 }
 
 #search-results-list li:hover {
 	font-size: 1.3em;
+	background-color: aqua;
 }
 
 .search-items-address {
