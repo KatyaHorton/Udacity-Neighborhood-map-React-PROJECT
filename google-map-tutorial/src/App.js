@@ -62,7 +62,9 @@ class App extends Component {
 	  updateLocations = (searchResultArr, query) => {
     if(query && searchResultArr) {
       this.setState((state) => ({
-        locations: searchResultArr
+        locations: searchResultArr,
+		  zoom: 14, 
+		  newCenter: { lat: 51.48, lng: -0.001 }
       }))
     } else {
 
@@ -71,8 +73,7 @@ class App extends Component {
     }
   }	  
 	  
-
-
+	  
   render() {
 	  console.log('Locations:', this.state.locations );
     return (
