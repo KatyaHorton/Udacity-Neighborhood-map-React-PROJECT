@@ -88,6 +88,7 @@ class App extends Component {
 		<SearchContainer 
 			locations = { this.state.locations }
 			handleChildClickEvent = { this.handleChildClickEvent }
+			selectedLocation = { this.state.selectedLocation }
 		/>
       </div>
     );

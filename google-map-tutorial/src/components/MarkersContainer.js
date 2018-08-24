@@ -5,8 +5,7 @@ import { Marker, InfoWindow } from "react-google-maps"
 //ASSIGN INFOWINDOW MARKER  IN THE SAME WAY AS WE ASSIGNED  MARKER TO MAP
 
 class MarkersContainer extends Component  {
- 
-
+ 	
     render() {
         return (
 
@@ -21,9 +20,11 @@ class MarkersContainer extends Component  {
 	
 	{ (this.props.selectedLocation === this.props.checkId ) && 
 	  (<InfoWindow 
-	   	onCloseClick = {() => 
+	   	onCloseClick = {(event) => 
 		
-		{alert('smth has to happen here so infowindow can ber reopened')}}>
+		{alert('smth has to happen here so infowindow can ber reopened')}
+		
+	}>
 						<div className='info-window'>
 								<span className='info-window-name'>{ this.props.name }
 								</span><br/>

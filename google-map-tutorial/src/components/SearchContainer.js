@@ -17,13 +17,13 @@ class SearchContainer extends Component {
 								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}					
 							>
 							{location.name}<br/>
-							<span className='search-items-address'>
-								{location.location.formattedAddress}
-							</span>
-							</li>
+								{(this.props.selectedLocation === location.id ) && <span className='search-items-address'>
+								{location.categories[0].name}
+							</span> } 
+			</li>
 		)
 		)}
-	
+		
 					</ol>
 				</div>
 			</div>
