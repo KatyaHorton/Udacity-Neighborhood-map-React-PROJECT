@@ -12,7 +12,7 @@ class App extends Component {
 		locations: [],
 		searchedLocations: [],
 		locationsNotFound: false,
-		newCenter: { lat: 51.48, lng: -0.001 },
+		newCenter: { lat: 51.49, lng: -0.005 },
 		zoom: 14,
 		isOpen: false,
 		selectedLocation: {}
@@ -97,7 +97,7 @@ class App extends Component {
 				isOpen = { this.state.isOpen }
 		 		googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qQFJpin2n9dhMsENQ0n6P34eZkix0h8&v=3.exp&libraries=geometry,drawing,places`}
 				loadingElement={<div style={{ height: `100%` }} />}
-				containerElement={<div id="map-container" aria-labelledby="map container" tabIndex="0" role="application" style={{ minheight: `600px` }} />}
+				containerElement={<div id="map-container" aria-labelledby="map container" tabIndex="0" role="application" style={{ height: `700px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
 		
 		/>
