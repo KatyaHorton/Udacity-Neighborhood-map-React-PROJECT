@@ -1,7 +1,7 @@
 #main {
   text-align: center;
   display: grid;
-  grid-template-rows: repeat(2, minmax(40px, auto));
+  grid-template-rows: repeat(3, minmax(40px, auto));
   grid-template-columns: repeat(3, 1fr);	
   min-height: 100%;
   max-width: 1150px;
@@ -86,6 +86,21 @@
 }
 
 
+#footer-container {
+	grid-column: 1/4;	
+	grid-row: 3/4;
+	background-color: #3f281f;
+	height: 40px;
+	padding: 40px;
+	color: white;
+	font-size: 1.3em;
+}
+
+
+#footer-container a{
+	color: lightcyan;
+	text-decoration: none;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

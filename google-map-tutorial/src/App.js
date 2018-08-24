@@ -97,7 +97,7 @@ class App extends Component {
 				isOpen = { this.state.isOpen }
 		 		googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qQFJpin2n9dhMsENQ0n6P34eZkix0h8&v=3.exp&libraries=geometry,drawing,places`}
 				loadingElement={<div style={{ height: `100%` }} />}
-				containerElement={<div id="map-container" style={{ height: `600px` }} />}
+				containerElement={<div id="map-container" aria-labelledby="map container" tabIndex="0" role="application" style={{ minheight: `600px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
 		
 		/>
@@ -109,7 +109,16 @@ class App extends Component {
 			selectedLocation = { this.state.selectedLocation }
 			onUserDidSearch= { this.updateLocations }
 		/>
+		
+			<div id='footer-container'>
+				<div id='footer-info'>
+		This application was developed by @KatyaHorton.
+		Data used from  
+		<a href="https://developer.foursquare.com/" role="link" tabIndex={0} 
+          		 	aria-label="Link to four square API developer site"> Foursquare API.</a></div>
+			</div>
       </div>
+		
     );
   }
 }

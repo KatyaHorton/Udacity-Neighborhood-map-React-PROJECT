@@ -61,14 +61,21 @@ class SearchContainer extends Component {
 					id="search-input" 
 					type="text" 
 					placeholder="What exactly do you fancy?"
+					aria-label="Enter the name of the place you search"
+					role="textbox"
 					onChange = {(event) => this.handleTextChange(event.target.value, event)}
 			/>
 				<div id='search-results'>
-					<ol id='search-results-list'>
+					<ol 
+						id='search-results-list' 
+						aria-label='List of restaurants in Greenwich area'
+						role='menu'	
+					>
 						
+							
 						{((!this.props.locationsNotFound) && (this.props.locations.map(location => (
 							<li key={location.id}
-								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}					
+								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}
 							>
 							{location.name}<br/>
 								{(this.props.selectedLocation === location.id ) && <span className='search-items-address'>
