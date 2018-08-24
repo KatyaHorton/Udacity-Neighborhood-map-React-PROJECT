@@ -16,12 +16,7 @@ class SearchContainer extends Component {
 		})
 	}
 
-	clearQuery = () => {
-		this.state({
-			query: ''
-		})
-	}
-	
+
 	
 		searchLocations = (query) => {
 		let filteredLocations
@@ -43,8 +38,12 @@ class SearchContainer extends Component {
 		}	
 
 		result = {locationsHasItems: locationsHasItems	, filteredLocations: filteredLocations}
+			
+		
 		return result
 		}
+		
+	
 		
 		
 			handleTextChange = (query, event) => {

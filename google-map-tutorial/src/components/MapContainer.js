@@ -16,6 +16,7 @@ const markers = props.locations.map( currentLocation =>
 										name = {currentLocation.name}
 										isOpen = {props.isOpen}
 										checkId = { currentLocation.id }
+										locationsNotFound = { props.locationsNotFound }
 										address = { currentLocation.location.formattedAddress}
 										onClick={(event) => props.handleChildClickEvent(event, currentLocation.location, currentLocation.id)}
 									/>

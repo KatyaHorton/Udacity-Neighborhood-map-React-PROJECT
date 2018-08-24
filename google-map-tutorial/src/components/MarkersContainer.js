@@ -26,12 +26,12 @@ class MarkersContainer extends Component  {
 		
 	}>
 						<div className='info-window'>
-								<span className='info-window-name'>{ this.props.name }
+								<span className='info-window-name'>{ this.props.name || 'Ooopsy! Google the name, please :)'}
 								</span><br/>
-								{ this.props.address } 
+								{ this.props.address  || 'Ooopsy! Google the address, please :)' } 
 						</div>
       				</InfoWindow> )}
-            </Marker>
+            </Marker> 
         )
     } 
 	

@@ -15,11 +15,8 @@ class App extends Component {
 		newCenter: { lat: 51.48, lng: -0.001 },
 		zoom: 14,
 		isOpen: false,
-		showInfoIndex: -1,
-		selectedLocation: {},
-		query: ''
-		
-	
+		selectedLocation: {}
+
 	}
 	
   componentDidMount() {
@@ -93,6 +90,7 @@ class App extends Component {
 		<MapContainer
 				selectedLocation = { this.state.selectedLocation }
 				locations = { this.state.locations }
+				locationsNotFound = { this.state.locationsNotFound }
 				newCenter = { this.state.newCenter }
 				zoom = { this.state.zoom }
 				handleChildClickEvent = { this.handleChildClickEvent }
@@ -110,7 +108,6 @@ class App extends Component {
 			handleChildClickEvent = { this.handleChildClickEvent }
 			selectedLocation = { this.state.selectedLocation }
 			onUserDidSearch= { this.updateLocations }
-			query = { this.state.query }
 		/>
       </div>
     );
