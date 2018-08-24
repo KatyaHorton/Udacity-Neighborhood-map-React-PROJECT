@@ -1,0 +1,185 @@
+
+
+
+
+#main {
+  text-align: center;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(40px, auto));
+  grid-template-columns: repeat(3, 1fr);	
+  min-height: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+#header-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 60px;
+ 
+}
+
+#header {
+  background-color: #3f281f;
+  height: 110px;
+  padding: 20px;
+  color: white;	
+  grid-column: 1/4;	
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+#map-container{
+	grid-row: 2/3;
+	grid-column: 2/4;
+	min-height: 660px;
+}
+
+#search-container {
+	grid-row: 2/3;
+	grid-column: 1/2;
+	background-color: bisque;
+	text-align: center;
+	padding: 2%;
+}
+
+#search-input{
+	width: 95%;
+	height: 30px;
+	font-size: 1em;
+}
+
+#search-results{
+	width: 99%;
+	height: 90%;	
+}
+
+ol {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#search-results-list li{
+	
+	padding: 0.2em;
+	text-align: left;
+	width: 90%;
+}
+
+#search-results-list li:hover {
+	font-size: 1.3em;
+	background-color: aqua;
+}
+
+.search-items-address {
+	font-size: 0.8em;	
+}
+
+.info-window {
+	 	background: #f7ebcf;
+        border: 1px solid #999;
+        border-radius: 1px;
+        min-height: 60px;
+        line-height: 15px;
+        padding: 10px 10px 10px 10px;
+        text-align: left;
+		width: 130px;
+}
+
+.info-window-name {
+	text-decoration: underline;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+#footer-container {
+	grid-column: 1/4;	
+	grid-row: 3/4;
+	background-color: #3f281f;
+	height: 40px;
+	padding: 40px;
+	color: white;
+	font-size: 1.3em;
+}
+
+
+#footer-container a{
+	color: lightcyan;
+	text-decoration: none;
+}
+
+
+@media screen and (max-width: 860px)  {
+	
+#main {
+
+  grid-template-columns: repeat(4, 1fr);	
+	}
+
+#header {
+  grid-column: 1/5;	
+}
+	
+#map-container{
+	grid-row: 2/3;
+	grid-column: 3/5;	
+	min-height: 660px;
+}
+
+#search-container {
+	grid-column: 1/3;	
+}
+
+#footer-container {	
+	grid-column: 1/5;
+	height: auto;
+	padding: 25px;
+	font-size: 0.9em;
+}	
+}
+
+
+@media screen and (max-width: 600px)  {
+	
+#main {
+  
+  grid-template-rows: repeat(4, minmax(40px, auto));
+  grid-template-columns: repeat(3, 1fr);	
+	}
+
+#map-container{
+	grid-row: 2/3;
+	grid-column: 1/4;	
+	min-height: 660px;
+}
+
+#search-container {
+	grid-row: 3/4;
+	grid-column: 1/4;	
+	background-color: bisque;
+	text-align: center;
+	padding: 2%;
+	width:100%;
+}
+
+#footer-container {	
+	grid-row: 4/5;
+	height: auto;
+	padding: 25px;
+	font-size: 0.9em;
+}	
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
