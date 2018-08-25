@@ -6,6 +6,7 @@
 This is MyReads (s Book Lending app project based on React) of a Udacity Student Katya Horton.
 MyReads will help you to sort your books according to their status in your life.
 
+### Please note that this application is using data from [Foursquare API](https://developer.foursquare.com/).
 
 ## Table of Contents
 
