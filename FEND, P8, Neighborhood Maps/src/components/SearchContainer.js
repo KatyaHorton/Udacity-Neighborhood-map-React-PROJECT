@@ -66,15 +66,18 @@ class SearchContainer extends Component {
 					onChange = {(event) => this.handleTextChange(event.target.value, event)}
 			/>
 				<div id='search-results'>
-					<ol 
+					<ul 
 						id='search-results-list' 
 						aria-label='List of restaurants in Greenwich area'
-						role='menu'	
+						tabIndex="0" 
+						role="tablist"
 					>
 						
 							
 						{((!this.props.locationsNotFound) && (this.props.locations.map(location => (
 							<li key={location.id}
+								tabIndex="0" 
+								role="button"
 								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}
 							>
 							{location.name}<br/>
@@ -88,7 +91,7 @@ class SearchContainer extends Component {
 
 					{((this.props.locationsNotFound) && (<div>Search results not found</div>)	)}
 		
-					</ol>
+					</ul>
 			
 					
 				</div>
