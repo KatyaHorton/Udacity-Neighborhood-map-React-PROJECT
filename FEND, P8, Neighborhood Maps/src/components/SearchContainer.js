@@ -43,9 +43,7 @@ class SearchContainer extends Component {
 		return result
 		}
 		
-	
-		
-		
+
 			handleTextChange = (query, event) => {
 				this.updateQuery(query)
 				let result = this.searchLocations(query)
@@ -62,7 +60,6 @@ class SearchContainer extends Component {
 					type="text" 
 					placeholder="What exactly do you fancy?"
 					aria-label="Enter the name of the place you search"
-					role="textbox"
 					onChange = {(event) => this.handleTextChange(event.target.value, event)}
 			/>
 				<div id='search-results'>

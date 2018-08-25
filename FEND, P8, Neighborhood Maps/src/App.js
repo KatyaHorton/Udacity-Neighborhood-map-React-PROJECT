@@ -39,6 +39,7 @@ class App extends Component {
 	  
 	}
 
+
 /* ------------------------- FUNCTIONS TO HANDLE EVENTS ------------------------- */
 
 //function for the items in the list or marker in the map clicked	  

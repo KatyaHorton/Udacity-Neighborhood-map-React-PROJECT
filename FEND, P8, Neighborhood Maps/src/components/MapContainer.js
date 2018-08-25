@@ -2,20 +2,12 @@ import React from 'react';
 //imports ‘withGoogleMap’ (a Higher Order Component)
 
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
-import { compose, lifecycle } from "recompose"
+import { compose } from "recompose"
 import MarkersContainer from './MarkersContainer'
 
 
+
 const MapContainer = compose(
-	    lifecycle({
-			 componentDidMount() {
-        
-        },
-        componentDidCatch(error, info) {
-            console.log(error)
-            alert(" Sorry! Error occurred whilst loading data from FourSquare API. Locations data will not be displayed ")
-        }
-    }),
 
 	withScriptjs,withGoogleMap)(props =>{
 
