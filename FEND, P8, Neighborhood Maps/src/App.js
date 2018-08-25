@@ -45,6 +45,8 @@ class App extends Component {
 //function for the items in the list or marker in the map clicked	  
 	  handleChildClickEvent = (smth, location, id) => {
 		  
+
+		  
 		  if(location !== undefined) {
 		  this.setState({
 			  newCenter: {lat: location.lat, lng: location.lng },

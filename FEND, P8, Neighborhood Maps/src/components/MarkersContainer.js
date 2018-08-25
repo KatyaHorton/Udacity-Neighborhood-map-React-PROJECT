@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Marker, InfoWindow } from "react-google-maps"
-
-
-//ASSIGN INFOWINDOW MARKER  IN THE SAME WAY AS WE ASSIGNED  MARKER TO MAP
+import { Marker, InfoWindow, withScriptjs, withGoogleMap, GoogleMap  } from "react-google-maps"
 
 class MarkersContainer extends Component  {
 	
- 	
+	
     render() {
+		
         return (
 
             <Marker
@@ -16,7 +14,8 @@ class MarkersContainer extends Component  {
 				onClick={ this.props.onClick }
 				address = { this.props.address }
 				selectedLocation = { this.props.selectedLocation }
-				
+
+			animation = { (this.props.selectedLocation === this.props.checkId)  && ( window.google.maps.Animation.BOUNCE )}
 				>	
 	
 	{ (this.props.selectedLocation === this.props.checkId ) && 

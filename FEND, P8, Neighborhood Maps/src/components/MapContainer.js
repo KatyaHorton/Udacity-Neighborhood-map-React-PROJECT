@@ -8,6 +8,8 @@ import MarkersContainer from './MarkersContainer'
 
 
 const MapContainer = compose(
+	
+	
 
 	withScriptjs,withGoogleMap)(props =>{
 
@@ -23,10 +25,12 @@ const markers = props.locations.map( currentLocation =>
 										locationsNotFound = { props.locationsNotFound }
 										address = { currentLocation.location.formattedAddress}
 										onClick={(event) => props.handleChildClickEvent(event, currentLocation.location, currentLocation.id)}
+										animation = { props.animation }
+								
 									/>
 )	
 	return (
- 
+		
 		<GoogleMap
 			zoom ={ props.zoom }
        		center = { props.newCenter }
