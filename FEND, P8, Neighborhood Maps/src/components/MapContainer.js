@@ -2,10 +2,22 @@ import React from 'react';
 //imports ‘withGoogleMap’ (a Higher Order Component)
 
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import { compose, lifecycle } from "recompose"
 import MarkersContainer from './MarkersContainer'
 
 
-const MapContainer = withScriptjs(withGoogleMap((props) =>{
+const MapContainer = compose(
+	    lifecycle({
+			 componentDidMount() {
+        
+        },
+        componentDidCatch(error, info) {
+            console.log(error)
+            alert(" Sorry! Error occurred whilst loading data from FourSquare API. Locations data will not be displayed ")
+        }
+    }),
+
+	withScriptjs,withGoogleMap)(props =>{
 
 
 const markers = props.locations.map( currentLocation => 
@@ -34,6 +46,10 @@ const markers = props.locations.map( currentLocation =>
 	)
 	
 })
-)
+
 
 export default MapContainer;
+
+
+
+

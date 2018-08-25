@@ -15,3 +15,4 @@ export const getAllPlaces = () =>
 //gets array of venues 
     .then(data => data.response.venues)
 
+

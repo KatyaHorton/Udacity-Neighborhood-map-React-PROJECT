@@ -6,6 +6,7 @@ import SearchContainer from './components/SearchContainer.js'
 import * as FoursquareDataAPI from './components/FoursquareDataAPI.js'
 
 
+
 class App extends Component {
 	
 	state = {
@@ -35,10 +36,8 @@ class App extends Component {
 		 }).catch((error) => {
 			 alert('Sorry! Error occurred whilst loading data from FourSquare API. Locations data will not be displayed ')
 		 })
+	  
 	}
-
-
-
 
 /* ------------------------- FUNCTIONS TO HANDLE EVENTS ------------------------- */
 
@@ -74,7 +73,9 @@ class App extends Component {
 		})
 			
     }
-  }	  
+  }
+	  
+
 	  
 	  
   render() {
@@ -99,6 +100,7 @@ class App extends Component {
 				loadingElement={<div style={{ height: `100%` }} />}
 				containerElement={<div id="map-container" aria-labelledby="map container" tabIndex="0" role="application" style={{ height: `700px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
+				
 		
 		/>
 		
