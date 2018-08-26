@@ -71,14 +71,12 @@ class SearchContainer extends Component {
 						id='search-results-list' 
 						aria-label='List of restaurants in Greenwich area'
 						tabIndex="0" 
-						role="list"
 					>
 						
 							
 						{((!this.props.locationsNotFound) && (this.props.locations.map(location => (
 							<li key={location.id}
 								tabIndex="0" 
-								role="listitem"
 								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}
 							>
 							{location.name}<br/>

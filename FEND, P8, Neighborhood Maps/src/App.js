@@ -120,7 +120,7 @@ class App extends Component {
 				<div id='footer-info'>
 		This application was developed by @KatyaHorton.
 		Data used from  
-		<a href="https://developer.foursquare.com/" role="link" tabIndex={0} 
+		<a href="https://developer.foursquare.com/" tabIndex={0} 
           		 	aria-label="Link to four square API developer site"> Foursquare API.</a></div>
 			</div>
       </div>
