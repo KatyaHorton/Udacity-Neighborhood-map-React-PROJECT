@@ -54,7 +54,7 @@ class App extends Component {
 			  isOpen: true, 
 			  selectedLocation: id
 		  })
-			  console.log('SelectedLocation', this.state.selectedLocation)
+			  
 			  
 	  }}
 	  
@@ -78,14 +78,13 @@ class App extends Component {
 	
 			
    } 
-		  	console.log('Original locations:',this.state.originalLocations)
+		  	
   }
 	  
 
 	  
 	  
   render() {
-	  console.log('Locations:', this.state.locations );
     return (
       <div id="main">
 		
@@ -106,8 +105,7 @@ class App extends Component {
 				loadingElement={<div style={{ height: `100%` }} />}
 				containerElement={<div id="map-container" aria-label="map container" tabIndex="0" role="application" style={{ height: `700px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
-				
-		
+
 		/>
 		
 		<SearchContainer 

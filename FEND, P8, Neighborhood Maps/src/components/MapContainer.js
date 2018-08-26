@@ -25,7 +25,6 @@ const markers = props.locations.map( currentLocation =>
 										locationsNotFound = { props.locationsNotFound }
 										address = { currentLocation.location.formattedAddress}
 										onClick={(event) => props.handleChildClickEvent(event, currentLocation.location, currentLocation.id)}
-										animation = { props.animation }
 								
 									/>
 )	

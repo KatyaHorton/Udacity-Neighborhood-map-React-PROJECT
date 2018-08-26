@@ -35,7 +35,7 @@ class SearchContainer extends Component {
 		}
 			
 						
-		if (query.length == 0) {
+		if (query.length === 0) {
 			filteredLocations = locations
 		} 
 
@@ -89,7 +89,6 @@ class SearchContainer extends Component {
 		)
 		)))
 				} 
-
 
 					</ul>
 			

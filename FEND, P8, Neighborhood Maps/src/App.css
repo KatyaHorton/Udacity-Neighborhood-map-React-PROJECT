@@ -52,6 +52,9 @@
 	width: 95%;
 	height: 30px;
 	font-size: 1em;
+	border: 2px solid brown;
+	border-radius: 5px;
+	padding-left: 10px;
 }
 
 #search-results{
@@ -64,8 +67,6 @@ ul {
     margin: 0;
     padding: 0;
 }
-
-
 
 #search-results-list li{
 	
@@ -80,7 +81,9 @@ ul {
 }
 
 .search-items-address {
-	font-size: 0.8em;	
+	font-size: 0.8em;
+	background-color: floralwhite;
+	
 }
 
 .info-window {
