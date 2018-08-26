@@ -31,6 +31,15 @@ npm start
 
 The ```npm start``` command will automatically open the application in the browser. 
 
+To start the service worker run: 
+```
+npm run build
+
+serve -s build
+```
+
+Navigate to ```http://localhost:5000/```.
+
 For intial project detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
 ## Contributing

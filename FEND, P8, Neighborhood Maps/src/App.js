@@ -101,7 +101,7 @@ class App extends Component {
 				isOpen = { this.state.isOpen }
 		 		googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC-qQFJpin2n9dhMsENQ0n6P34eZkix0h8&v=3.exp&libraries=geometry,drawing,places`}
 				loadingElement={<div style={{ height: `100%` }} />}
-				containerElement={<div id="map-container" aria-labelledby="map container" tabIndex="0" role="application" style={{ height: `700px` }} />}
+				containerElement={<div id="map-container" aria-label="map container" tabIndex="0" role="application" style={{ height: `700px` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
 				
 		

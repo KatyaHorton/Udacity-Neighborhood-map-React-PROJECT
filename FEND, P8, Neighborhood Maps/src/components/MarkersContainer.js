@@ -20,11 +20,7 @@ class MarkersContainer extends Component  {
 	
 	{ (this.props.selectedLocation === this.props.checkId ) && 
 	  (<InfoWindow 
-	   	onCloseClick = {(event) => 
-		
-		{alert('smth has to happen here so infowindow can ber reopened')}
-		
-	}>
+	>
 						<div className='info-window'>
 								<span className='info-window-name'>{ this.props.name || 'Ooopsy! Google the name, please :)'}
 								</span><br/>
