@@ -8,7 +8,7 @@ class MarkersContainer extends Component  {
 		
         return (
 
-            <Marker
+      ((!this.props.locationsNotFound)   &&  ( <Marker
 				position = { this.props.location }
 				name = { this.props.name }
 				onClick={ this.props.onClick }
@@ -27,7 +27,7 @@ class MarkersContainer extends Component  {
 								{ this.props.address  || 'Ooopsy! Google the address, please :)' } 
 						</div>
       				</InfoWindow> )}
-            </Marker> 
+            </Marker> ))
         )
     } 
 	
