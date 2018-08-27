@@ -69,7 +69,7 @@ class SearchContainer extends Component {
 					>
 						
 							
-						{((!this.props.locationsNotFound) && (this.props.locations.map(location => (
+						{((!this.props.locationsNotFound) && (this.props.locationsToUse.map(location => (
 							<li key={location.id}
 								tabIndex="0" 
 								onClick={(event) => this.props.handleChildClickEvent(event, location.location, location.id)}
