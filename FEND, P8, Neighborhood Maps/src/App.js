@@ -11,12 +11,13 @@ class App extends Component {
 	
 	state = {
 		locations: [],
-		searchedLocations: [],
+		locationsToUse: [],
 		locationsNotFound: false,
 		newCenter: { lat: 51.49, lng: -0.005 },
 		zoom: 14,
 		isOpen: false,
-		selectedLocation: {}
+		selectedLocation: {},
+		query: ''
 
 	}
 	
@@ -31,7 +32,7 @@ class App extends Component {
 		 FoursquareDataAPI.getAllPlaces().then(handleErrors)
 			 .then((locations) => {
 			 this.setState({locations: locations,
-							originalLocations: locations
+							locationsToUse: locations
 						   })
 		 }).catch((error) => {
 			 alert('Sorry! Error occurred whilst loading data from FourSquare API. Locations data will not be displayed ')
@@ -63,28 +64,36 @@ class App extends Component {
 	  updateLocations = (searchResultArr, query) => {
     if(searchResultArr) {
       this.setState((state) => ({
-          locations: searchResultArr,
+          locationsToUse: searchResultArr,
 		  zoom: 14, 
 		  newCenter: { lat: 51.48, lng: -0.001 },
 		  locationsNotFound: false
       }))
     	
-	} else {
+	} else  {
 
 		this.setState({
-			locations: this.state.originalLocations,
-			locationsNotFound: true
+			locationsToUse: this.state.locations,
+			locationsNotFound: false
 		})
 	
 			
    } 
-		  	
+
   }
+	  
+		updateQuery = (query) => {
+			this.setState({
+			query: query
+		})
+	}	  
 	  
 
 	  
 	  
   render() {
+	  console.log('Locations:', this.state.locations )
+	  console.log('USING:', this.state.locationsToUse )
     return (
       <div id="main">
 		
@@ -95,7 +104,7 @@ class App extends Component {
 {/* passing props and states to MapContainer */}
 		<MapContainer
 				selectedLocation = { this.state.selectedLocation }
-				locations = { this.state.locations }
+				locations = { this.state.locationsToUse }
 				locationsNotFound = { this.state.locationsNotFound }
 				newCenter = { this.state.newCenter }
 				zoom = { this.state.zoom }
@@ -110,6 +119,7 @@ class App extends Component {
 		
 		<SearchContainer 
 			locations = { this.state.locations }
+			locationsToUse = { this.state.locationsToUse }
 			locationsNotFound = { this.state.locationsNotFound }
 			handleChildClickEvent = { this.handleChildClickEvent }
 			selectedLocation = { this.state.selectedLocation }

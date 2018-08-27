@@ -18,7 +18,7 @@ class SearchContainer extends Component {
 
 		searchLocations = (query) => {
 		let filteredLocations
-		let locations = this.props.locations
+		let locations = this.props.locationsToUse
 		let locationsHasItems = false 
 		let result ={}
 		
@@ -31,21 +31,16 @@ class SearchContainer extends Component {
 		const match = new RegExp(escapeRegExp(query.trim()), 'i')
 		if (locationsHasItems) {
 				filteredLocations = locations.filter((location) => match.test((location.name)))
+		} else if (!locationsHasItems) {
+			filteredLocations = []
 		}	
 		}
-			
-						
-		if (query.length === 0) {
-			filteredLocations = locations
-		} 
-
 
 		result = {locationsHasItems: locationsHasItems	, filteredLocations: filteredLocations}
 			
 		
 		return result
 		}
-		
 
 			handleTextChange = (query, event) => {
 				this.updateQuery(query)
@@ -56,7 +51,7 @@ class SearchContainer extends Component {
 		}
 		
 	render(){
-		
+		console.log('NOT FOUND:', this.props.locationsNotFound)
 		return(
 			<div id='search-container'>
 				<input 
