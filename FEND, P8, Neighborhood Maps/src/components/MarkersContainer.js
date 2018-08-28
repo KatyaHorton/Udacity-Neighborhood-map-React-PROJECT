@@ -3,7 +3,9 @@ import { Marker, InfoWindow  } from "react-google-maps"
 
 class MarkersContainer extends Component  {
 	
-	
+	toggleAnimation = () => {
+		
+	}
     render() {
 		
         return (
@@ -16,10 +18,15 @@ class MarkersContainer extends Component  {
 		address = { this.props.address }
 		selectedLocation = { this.props.selectedLocation }
 		animation = { (this.props.selectedLocation === this.props.checkId)  && ( window.google.maps.Animation.BOUNCE )}
+	    
 	   >	
 	
 		{ (this.props.selectedLocation === this.props.checkId ) && 
-	  	(<InfoWindow >
+	  	(<InfoWindow 	   	onCloseClick = {() => 
+		
+		{alert('smth has to happen here so infowindow can ber reopened')}}
+		 
+		 >
 						<div className='info-window'>
 								<span className='info-window-name'> { this.props.name || 'Ooopsy! Google the name, please '}
 								</span><br/>

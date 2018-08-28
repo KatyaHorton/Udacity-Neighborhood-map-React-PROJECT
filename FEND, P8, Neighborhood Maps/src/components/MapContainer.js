@@ -1,5 +1,4 @@
 import React from 'react';
-//imports ‘withGoogleMap’ (a Higher Order Component)
 
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import { compose } from "recompose"
@@ -7,11 +6,7 @@ import MarkersContainer from './MarkersContainer'
 
 
 
-const MapContainer = compose(
-	
-	
-
-	withScriptjs,withGoogleMap)(props =>{
+const MapContainer = (props =>{
 
 
 const markers = props.locations.map( currentLocation => 
@@ -43,8 +38,10 @@ const markers = props.locations.map( currentLocation =>
 })
 
 
-export default MapContainer;
 
+export default compose(
+	withScriptjs,
+	withGoogleMap)(MapContainer);
 
 
 
